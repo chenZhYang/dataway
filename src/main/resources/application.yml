@@ -1,0 +1,33 @@
+# 是否启用 Dataway 功能（必选：默认false）
+HASOR_DATAQL_DATAWAY: true
+
+# 是否开启 Dataway 后台管理界面（必选：默认false）
+HASOR_DATAQL_DATAWAY_ADMIN: true
+
+# dataway  API工作路径（可选，默认：/api/）
+HASOR_DATAQL_DATAWAY_API_URL: /api/
+
+# dataway-ui 的工作路径（可选，默认：/interface-ui/）
+HASOR_DATAQL_DATAWAY_UI_URL: /interface-ui/
+
+spring:
+  #数据库设置
+  datasource:
+    url: jdbc:mysql://localhost:3306/gzfs?useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=false&requireSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat,slf4j
+    initialSize: 10
+    maxActive: 100
+    maxWait: 60000
+    minIdle: 5300000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis:
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    driver-class-name: com.mysql.cj.jdbc.Driver
